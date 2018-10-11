@@ -11,7 +11,7 @@ case $1 in
       args="${*:1:$length}"
     fi
     filename="${*: -1}"
-    /bin/shellcheck "/home/shlint/lint/${*}"
+    /bin/shellcheck "${args}" "/home/shlint/lint/${filename}"
     ;;
   shfmt)
     shift
@@ -22,7 +22,7 @@ case $1 in
       args="${*:1:$length}"
     fi
     filename="${*: -1}"
-    /bin/shfmt ${args} "/home/shlint/lint/${filename}"
+    /bin/shfmt "${args}" "/home/shlint/lint/${filename}"
     ;;
   *)
     "$@"
