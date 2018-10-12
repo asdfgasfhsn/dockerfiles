@@ -2,8 +2,9 @@
 #
 # docker build . -t asdfgasfhsn/shlint:latest
 #
-# docker run -t asdfgasfhsn/shlint:latest \
-# -v ${PWD}:/home/shlint/lint/
+# docker run -v ${PWD}:/home/shlint/lint/ \
+# asdfgasfhsn/shlint:latest [shellcheck|shfmt|lint] [filename]
+#
 
 # Get shfmt
 FROM golang:alpine
