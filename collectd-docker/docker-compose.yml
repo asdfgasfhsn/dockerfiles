@@ -50,5 +50,5 @@ services:
     - type: bind
       source: /var/run/docker.sock
       target: /var/run/docker.sock
-    mem_limit: 2g
+    mem_limit: 512m
     mem_swappiness: 0
