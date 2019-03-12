@@ -1,0 +1,3 @@
+[submodule "collectd-docker/docker-collectd-plugin"]
+	path = collectd-docker/docker-collectd-plugin
+	url = https://github.com/lebauce/docker-collectd-plugin.git
