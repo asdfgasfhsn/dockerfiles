@@ -8,7 +8,7 @@ services:
       - 8086:8086
     volumes:
     - type: bind
-      source: "${PWD}/influxdb"
+      source: "${HOME}/.stats/influxdb"
       target: /var/lib/influxdb
     - type: bind
       source: "${PWD}/influxdb.conf"
@@ -20,17 +20,22 @@ services:
       INFLUXDB_DB: 'collectd'
       INFLUXDB_ADMIN_USER: 'admin'
       INFLUXDB_ADMIN_PASSWORD: 'secret'
+    mem_limit: 2g
+    mem_swappiness: 0
+
   grafana:
     image: grafana/grafana:5.1.0
     ports:
       - 3000:3000
     volumes:
       - type: bind
-        source: "${PWD}/grafana"
+        source: "${HOME}/.stats/grafana"
         target: "/var/lib/grafana"
     environment:
       GF_SERVER_ROOT_URL: "http://localhost"
       GF_SECURITY_ADMIN_PASSWORD: "secret"
+    mem_limit: 2g
+    mem_swappiness: 0
 
   collectd:
     image: asdfgasfhsn/collectd-docker:latest
@@ -45,3 +50,5 @@ services:
     - type: bind
       source: /var/run/docker.sock
       target: /var/run/docker.sock
+    mem_limit: 2g
+    mem_swappiness: 0
