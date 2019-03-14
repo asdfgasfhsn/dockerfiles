@@ -1,4 +1,6 @@
 # docker-collectd
+[![build](https://img.shields.io/docker/cloud/automated/asdfgasfhsn/collectd-docker.svg?style=for-the-badge)](https://hub.docker.com/r/asdfgasfhsn/collectd-docker)
+
 A collectd container with the [docker-collectd-plugin](https://github.com/lebauce/docker-collectd-plugin/).
 
 Designed to be used with the accompanying compose template for local stats
@@ -25,4 +27,3 @@ docker-compose -p stats up -d
 - url: http://localhost:3000
 - user: admin
 - pass: secret
--
