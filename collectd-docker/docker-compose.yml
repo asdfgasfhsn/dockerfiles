@@ -20,7 +20,7 @@ services:
       INFLUXDB_DB: 'collectd'
       INFLUXDB_ADMIN_USER: 'admin'
       INFLUXDB_ADMIN_PASSWORD: 'secret'
-    mem_limit: 2g
+    mem_limit: 6g
     mem_swappiness: 0
 
   grafana:
@@ -34,7 +34,7 @@ services:
     environment:
       GF_SERVER_ROOT_URL: "http://localhost"
       GF_SECURITY_ADMIN_PASSWORD: "secret"
-    mem_limit: 2g
+    mem_limit: 4g
     mem_swappiness: 0
 
   collectd:
@@ -50,5 +50,5 @@ services:
     - type: bind
       source: /var/run/docker.sock
       target: /var/run/docker.sock
-    mem_limit: 512m
+    mem_limit: 1024m
     mem_swappiness: 0
