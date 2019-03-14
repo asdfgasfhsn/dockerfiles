@@ -1,4 +1,6 @@
 FROM ubuntu:18.04
+LABEL maintainer "asdfgasfhsn dude@adsfgasfhsn.xyz"
+
 RUN apt-get update && apt-get install -y \
     python \
     python-pip \
